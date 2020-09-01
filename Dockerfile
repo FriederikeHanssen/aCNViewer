@@ -5,7 +5,7 @@
 #
 
 # Pull base image.
-FROM ubuntu
+FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
