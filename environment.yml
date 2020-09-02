@@ -1,0 +1,20 @@
+# You can use this file to create a conda environment for this pipeline:
+#   conda env create -f environment.yml
+name: nf-core-bamtofastq-1.0dev
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  #- conda-forge::r-markdown=1.1
+
+  - conda-forge::r-base=4.0.2
+  - conda-forge::git=2.28.0
+  - conda-forge::r-ggplot2=3.3.2
+  - conda-forge::r-gplots=3.0.4
+  - conda-forge::r-rcolorbrewer=1.1_2
+  - conda-forge::r-plotrix=3.7
+  - bioconda::bioconductor-limma=3.44.1
+  - conda-forge::xorg-libx11=1.6.12
+  - bioconda::samtools=1.10
+
