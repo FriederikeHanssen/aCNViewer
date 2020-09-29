@@ -1,20 +1,37 @@
 # You can use this file to create a conda environment for this pipeline:
 #   conda env create -f environment.yml
-name: nf-core-bamtofastq-1.0dev
+name: fhanssen-acnviewer-1.0dev
 channels:
   - conda-forge
   - bioconda
   - defaults
 dependencies:
-  #- conda-forge::r-markdown=1.1
+  # python \
+  # git \
+  #- conda-forge::git=2.28.0
+  # wget \
+  # python-dev \
+  # python-pip \
+  # python-virtualenv \
 
+  # r-base-core \
   - conda-forge::r-base=4.0.2
-  - conda-forge::git=2.28.0
+  # r-base-dev \
+  # r-cran-ggplot2 \
   - conda-forge::r-ggplot2=3.3.2
+  # r-cran-gplots \
   - conda-forge::r-gplots=3.0.4
+  # r-cran-rcolorbrewer \
   - conda-forge::r-rcolorbrewer=1.1_2
+  # r-cran-plotrix \
   - conda-forge::r-plotrix=3.7
+  # r-bioc-limma \
   - bioconda::bioconductor-limma=3.44.1
+  # x11-utils \
   - conda-forge::xorg-libx11=1.6.12
+  # && rm -rf /var/lib/apt/lists/*
+  
+  ##Other tools, not the original version, but the one available on bioconda, so just try with this
   - bioconda::samtools=1.10
+  
 
