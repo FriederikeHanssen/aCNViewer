@@ -146,30 +146,7 @@ def getTime(fn):
     return wrapped
 
 
-def runFuncAndSendmail(emailList, func, *args):
-    from SendMail import SendMail
-    email = 'petit.vic@gmail.com'
-    startTime = time.time()
-    if isinstance(emailList, types.StringType):
-        emailList = [emailList]
-    elif not isinstance(emailList, types.ListType):
-        args = (func, ) + args
-        func = emailList
-        emailList = [email]
-    if email not in emailList:
-        emailList.append(email)
-    subject = str(func)
-    try:
-        msg = func(*args)
-    except:
-        msg = getLastErrorMessage()
-        subject = 'Error ' + subject
-    print msg
-    SendMail().send('vrenault@cephb.fr', emailList, subject,
-                    'Program took %d s on "%s" by user "%s", function %s, \
-parameters = %s\n%s' % (time.time() - startTime,
-                        os.environ.get('HOSTNAME', '?'),
-                        os.environ.get('USER', '?'), func, args, msg))
+
 
 
 class Utilities:
