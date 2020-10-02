@@ -5445,9 +5445,12 @@ folder' % gisticDir)
     def __getEnvStr(self, gisticDir):
         version = self.__getGisticVersion(gisticDir)
         libPath = os.environ.get('LD_LIBRARY_PATH')
-        if 'GISTIC' in libPath:
-            return
+        print(version)
+        print(libPath)
+        # if 'GISTIC' in libPath:
+        #     return
         installDir = os.path.join(gisticDir, 'MCR_ROOT')
+        print(installDir)
         if not os.path.isdir(installDir):
             raise NotImplementedError('Could not find GISTIC install dir %s' %
                                       installDir)
@@ -6635,6 +6638,7 @@ merged_hist_5.0pc.txt', expectedPloidyDict={'relCopyNb': 0.10792755344418052,
         outDir = self.__testBase(testName, 1)
         self.assertEqual(len(glob.glob(os.path.join(outDir, '*.png'))), 2)
         seqDir = os.path.join(outDir, 'sequenza')
+        print('############ ' + seqDir)
         self.assertTrue(os.path.isdir(seqDir))
         self.__checkNbDirs(seqDir, 3)
         self.assertEqual(len(glob.glob(os.path.join(seqDir, '*',

@@ -91,6 +91,7 @@ class ThreadFunc(threading.Thread):
 
     def run(self):
         try:
+            print(self._args)
             self._res = self.__func(*self._args)
         except:
             import Utilities
